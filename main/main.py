@@ -1,4 +1,5 @@
 from flask import *
+from flask_login import login_required, current_user
 from logging import *
 from . import db
 app = Blueprint('main', __name__)
@@ -6,18 +7,18 @@ app = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
-#@app.route('/profile')
-#def profile():
-#    return render_template('profile.html')
-#@app.route('/')
-#def login_stranka():
-#    return render_template("prihlasovani.html")
+@app.route("/rozcestnik")
+def rozcestnik():
+    return render_template("rozcestnik.html")
+
 
 @app.route("/prvni_ukol")
+@login_required
 def prvni_ukol_stranka():
-    return render_template("prvni_ukol.html")
+    return render_template("prvni_ukol.html", name=current_user.name)
 
 @app.route("/druhy_ukol")
+@login_required
 def druhy_ukol_stranka():
     return render_template('druhy_ukol.html')
 
