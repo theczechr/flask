@@ -30,3 +30,14 @@ def prvni_ukol():
     #    myfile.write(text) # text by tady bylo napriklad vysledky ukolu, urcite zahashovat!
     # - toto si udelejte jak chcete, proste lokalni ukladani kdyby ukladani na serveru padlo lol?
     return redirect("/rozcestnik") # vraci zpatky na rozcestnik, udelejte si jak chce
+@app.route("/druhy_ukol")
+@login_required
+def druhy_ukol_stranka():
+    return render_template('druhy_ukol.html')
+
+@app.route('/druhy_ukol', methods=['POST'])
+def login():
+    answer = request.form['answer']
+    #with open("answers", "w+") as myfile:
+    #    myfile.write(text)
+    return redirect("/rozcestnik")
