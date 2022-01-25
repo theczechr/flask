@@ -1,2 +1,2 @@
 # flask
-Flask codebase and my project
+Potreba pip install flask flask-login flask-sqlalchemy

@@ -2,9 +2,12 @@
 
 {% block content %}
 <h1 class="title">
-  Flask Login Example
+  Purkiada 2022
 </h1>
+{% if not current_user.is_authenticated %}
 <h2 class="subtitle">
-  Easy authentication and authorization in Flask.
+  Prihlaste se prosim:
 </h2>
+<a href="{{ url_for('auth.login') }}" class="subtitle">Login</a>
+{% endif %}
 {% endblock %}
