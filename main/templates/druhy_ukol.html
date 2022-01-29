@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Druha hashovaci uloha</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h1>*Nazev druhe ulohy*</h1>
 <p>*Popis druhe ulohy</p>
 <p>obrazky k druhe uloze</p>
 <form method="POST">
-  <input name="odpoved">
+  <label for="answer">Odpoved:</label>
+  <input type="text" id="answer" name="answer"><br><br>
   <input type="submit">
 </form>
-
-
-
-</body>
-</html>
+{% endblock %}
