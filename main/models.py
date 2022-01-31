@@ -1,5 +1,3 @@
-from enum import unique
-from tkinter.tix import Tree
 from flask_login import UserMixin
 from . import db
 
