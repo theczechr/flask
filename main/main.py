@@ -1,5 +1,5 @@
 from flask import *
-from flask_login import current_user, login_required, logout_user
+from flask_login import current_user, login_required
 from logging import *
 from . import db
 from main.odpovedi import *
