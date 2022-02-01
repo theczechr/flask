@@ -3,6 +3,7 @@ from .models import User
 from flask_login import login_user
 from . import db
 
+
 auth = Blueprint('auth', __name__)
 @auth.route('/login') 
 def login():

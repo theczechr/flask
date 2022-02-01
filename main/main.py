@@ -2,6 +2,7 @@ from flask import *
 from flask_login import current_user, login_required, logout_user
 from logging import *
 from . import db
+from main.odpovedi import *
 app = Blueprint('main', __name__) # inicializace appky
 @app.route('/') # landing page, klidne si dejte landing page login nebo rozcestnik, zalezi uz na vas.
 def index():
@@ -14,9 +15,18 @@ def index():
 def rozcestnik():
     return render_template('rozcestnik.html')
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = MyForm(request.form)
+    print(form)
+    if request.method == 'POST' and form.validate():
+        flash('Thanks for registering')
+    return render_template('signup.html', form=form)
+
+
 
 @app.route("/prvni_ukol") #definovani url
-@login_required # pusti vas na stranku co je definovana o radek vys pouze kdyz jste prihlaseni
+@login_required # pusti vas na stranku co je definovana RadioField(u'Full Name')(u'Full Name')RadioField(u'Full Name')RadioField(u'Full Name') radek vys pouze kdyz jste prihlaseni
 def prvni_ukol_stranka():
     return render_template("prvni_ukol.html", name=current_user.name) #nastavuje ze jste prihlaseni pod xxxxx jmenem je 
 
