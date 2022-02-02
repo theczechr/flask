@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
+body= SQLAlchemy()
 #SQL veci, nepotrebujete moc vedet jak to funguje, proste to funguje
 #SQL table si pojmenujte prosim users, je to tak nastavene, jinak vam to nepujde.
 def create_app():

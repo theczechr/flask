@@ -1,0 +1,254 @@
+{
+    "otazky": [
+    {
+        "zadani": "Co znamená zkratka RAM?",
+        "odpovedi": [
+            "Random Access Memory",
+            "Read-Asynchronous Memory",
+            "Rewritable Access Memory",
+            "Rewritable Accessible Memory"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Jaké součástky jsou naprosto nezbytné pro fungování počítače?",
+        "odpovedi": [
+            "Procesor, Základní deska, Monitor, Klávesnice",
+            "Procesor, Grafická karta, Zdroj, RAM",
+            "Základní deska, Procesor, RAM, Zdroj",
+            "Skříň, Monitor, Klávesnice, Myš"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "Mobilní telefon…",
+        "odpovedi": [
+            "Není počitač",
+            "Je počítač",
+            "Je speciálním zařízením odvozeným od počítače a proto se nedá považovat za počítač",
+            "Je nástupce počítače"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Číslo 16 v osmičkové soustavě je…?",
+        "odpovedi": [
+            "10000",
+            "20",
+            "24",
+            "121"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Jaký programovací jazyk používá Unreal Engine 4",
+        "odpovedi": [
+            "C#",
+            "Java",
+            "Python",
+            "C++"
+        ],
+        "spravne": 3
+    },
+    {
+        "zadani": "Jaký je rozdíl mezi SSD a HDD?",
+        "odpovedi": [
+            "SSD ukládá data v elektronické podobě zatímco v HDD jsou ukládána na el. mag. disku.",
+            "SSD ukládá data na el. mag. disk zatímco HDD v jsou uložená data v elektronické podobě.",
+            "SSD se používá v noteboocích, HDD ve stolních počítačích",
+            "SSD se více hodí na dlouhodobé uložení dat, kvůli své dlouhé životnosti"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Kterou zkratku má logický součin?",
+        "odpovedi": [
+            "OR",
+            "XOR",
+            "AND",
+            "NOR"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "Co je to počítač?",
+        "odpovedi": [
+            "Např. kalkulačka",
+            "Zařízení pro zpracování dat pomocí předem vytvořeného programu",
+            "Zařízení, které se skládá z počítačové skříně, klávesnice a myši",
+            "Zařížení, které nemá turingovskou úplnost"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Co je to Internet?",
+        "odpovedi": [
+            "Uzavřená počítačová síť",
+            "Celosvětový systém propojených počítačových sítí",
+            "Název souhrnu technologií pro počítačové sítě",
+            "Služby výhradně poskytující zábavu"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Co znamená zkratka Wi-Fi?",
+        "odpovedi": [
+            "Wireless Fidelity",
+            "Wireless Fixture",
+            "Wireless Firewire",
+            "Nic, existuje jen jako chytlavý název"
+        ],
+        "spravne": 3
+    },
+    {
+        "zadani": "K čemu slouží Bluetooth?",
+        "odpovedi": [
+            "Výhradně pro poslech hudby",
+            "Bezdrátový přenos dat, zvuku atp.",
+            "Připojení k Internetu",
+            "Přenosu dat použitím kabelu nebo i bezdrátově"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Herní engine je například…",
+        "odpovedi": [
+            "Numpy, Keras",
+            "Godot, Unreal Engine 3",
+            "JavaScript, C#",
+            "Steam, Epic Games"
+        ],
+        "spravne": 1
+    },
+    {
+        "zadani": "Co je to operační systém?",
+        "odpovedi": [
+            "Základní program počítače umožňující běh dalších programů",
+            "Např. BIOS",
+            "Veškerý software předinstalovaný na počítači",
+            "Základní program počítače sloužící výhradně pro komunikaci s hardwarem"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Co znamená zkratka HTML?",
+        "odpovedi": [
+            "HyperText Machine Learning",
+            "HyperText Modular Language",
+            "HyperText Markup Language",
+            "HyperText Machine Language"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "Co je to kryptoměna?",
+        "odpovedi": [
+            "Unikátní token digitálního vlastnictví NFT",
+            "Druh šifrování",
+            "Měna s detailní historií tranksakcí",
+            "Typ digitální měny, která je tvořena elektronicky"
+        ],
+        "spravne": 3
+    },
+    {
+        "zadani": "V jakým programovací jazyku je napsaný Minecraft?",
+        "odpovedi": [
+            "PHP",
+            "Rust",
+            "Java",
+            "JavaScript"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "K čemu slouží kybernetika?",
+        "odpovedi": [
+            "Regulace, Technické řízení",
+            "Zabezpečení systému",
+            "Označení pro zločin na webu",
+            "Zpracování převodů mezi běžnou měnou a kryptoměnou"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Kolik bajtů (byte) je jeden gigabajt (gigabyte)? Pozor na rozdíl mezi gibibyte a gigabyte!",
+        "odpovedi": [
+            "1 000 000 000 000 B",
+            "1 024 024 024 024 B",
+            "1 073 741 824 B",
+            "1 000 000 000 B"
+        ],
+        "spravne": 3
+    },
+    {
+        "zadani": "Jaké jsou dnes používané operační systémy na počítači?",
+        "odpovedi": [
+            "PowerShell",
+            "Unix, BSD",
+            "Windows, MacOS, Linux",
+            "MFT"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "Procesor je poskládán z: ",
+        "odpovedi": [
+            "Řadič, Registry, ALU, FPU",
+            "Hub, Switch, Bridge",
+            "Registry, CISC, Operand, FPU",
+            "ALU, RISC, Sběrnice, Řadič"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Periferie jsou například…",
+        "odpovedi": [
+            "Herní konzole",
+            "Počítačová skříň, HDMI kabel",
+            "Klávesnice, tiskárna, myš",
+            "Grafická karta, procesor"
+        ],
+        "spravne": 2
+    },
+    {
+        "zadani": "Jak se jmenuje první vzniklý programovací jazyk?",
+        "odpovedi": [
+            "Plankalkül",
+            "Assembly",
+            "FORTRAN",
+            "Autocode"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Co znamená HTTP Error 404?",
+        "odpovedi": [
+            "Conflict",
+            "No Content",
+            "Service Unavailable",
+            "Not Found"
+        ],
+        "spravne": 3
+    },
+    {
+        "zadani": "Co je to ray-tracing?",
+        "odpovedi": [
+            "Metoda výuživající zpětné sledování paprsku pro výpočet obrazů",
+            "Metoda výužívající fyzikální zákony o šíření energie prostoru pro výpočet obrazů",
+            "Metoda vyklesující scénu v uměleckém stylu",
+            "Metoda šířící světlo skrze objekt bez zkreslení"
+        ],
+        "spravne": 0
+    },
+    {
+        "zadani": "Které firmy vyrábí v dnešní době grafické karty?",
+        "odpovedi": [
+            "ATI, NVIDIA",
+            "SAMSUNG, SK HYNIX, Micron",
+            "Microsoft, IMB",
+            "Google, Facebook"
+        ],
+        "spravne": 0
+    }
+    ]
+}
