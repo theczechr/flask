@@ -27,4 +27,4 @@ class MyForm(FlaskForm):
     otazka21 = RadioField('Jak se jmenuje první vzniklý programovací jazyk?', choices=[(0, 'Plankalkül'), (1, 'Assembly'), (2, 'FORTRAN'), (3, 'Autocode')], coerce=int)
     otazka22 = RadioField('Co znamená HTTP Error 404?', choices=[(0, 'Conflict'), (1, 'No Content'), (2, 'Service Unavailable'), (3, 'Not Found')], coerce=int)
     otazka23 = RadioField('Co je to ray-tracing?', choices=[(0, 'Metoda výuživající zpětné sledování paprsku pro výpočet obrazů'), (1, 'Metoda výužívající fyzikální zákony o šíření energie prostoru pro výpočet obrazů'), (2, 'Metoda vyklesující scénu v uměleckém stylu'), (3, 'Metoda šířící světlo skrze objekt bez zkreslení')], coerce=int)
-    otazka24 = RadioField('Které firmy vyrábí v dnešní době grafické karty?', choices=[(0, 'ATI, NVIDIA'), (1, 'SAMSUNG, SK HYNIX, Micron'), (2, 'Microsoft, IMB'), (3, 'Google, Facebook')], coerce=int)
+    otazka24 = RadioField('Které firmy vyrábí v dnešní době grafické karty?', choices=[(0, 'ATI, NVIDIA'), (1, 'SAMSUNG, SK HYNIX, Micron'), (2, 'Microsoft, IBM'), (3, 'Google, Facebook')], coerce=int)

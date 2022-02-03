@@ -15,7 +15,7 @@ def index():
 @app.route('/rozcestnik')
 @login_required
 def rozcestnik():
-    return render_template('rozcestnik.html')
+    return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -26,8 +26,7 @@ def register():
     if request.method == "POST": 
         if form.validate_on_submit():
             all_answers = form.data
-            all_answers.pop('csrf_token')
-            
+            all_answers.pop('csrf_token') 
             for value in all_answers.values():
                 all_list.append(value)
             all_users[current_user.id] = all_list
@@ -38,14 +37,21 @@ def register():
             
             print(spravne)
             print(all_users)
-            
-            data= Body(id=current_user.id, name=current_user.name, pocet_bodu=spravne)
-            
-            bodovani.session.add(data)
-            bodovani.session.commit()
+
+            existuje = Body.query.filter_by(name=current_user.name).first()
+            if existuje:
+                existuje.pocet_bodu = spravne
+                existuje.odeslano = True
+                bodovani.session.commit()
+
+            else:
+                data = Body(name=str(current_user.name), pocet_bodu=spravne, odeslano=True)
+                bodovani.session.add(data)
+                bodovani.session.commit()
         else:
+
             print(form.errors)
-        return render_template('signup.html', form=form)
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
 
     else:
         return render_template('signup.html', form=form)
@@ -66,10 +72,6 @@ def prvni_ukol():
     if current_user.odpoved == odpoved:
         spravne = True
         print(current_user)
-        
-    #with open("answers", "w+") as myfile:
-    #    myfile.write(text) # text by tady bylo napriklad vysledky ukolu, urcite zahashovat!
-    # - toto si udelejte jak chcete, proste lokalni ukladani kdyby ukladani na serveru padlo lol?
     return render_template("rozcestnik.html", odpoved="gj") # vraci zpatky na rozcestnik, udelejte si jak chce
 @app.route("/druhy_ukol")
 @login_required
@@ -79,7 +81,5 @@ def druhy_ukol_stranka():
 @app.route('/druhy_ukol', methods=['POST'])
 def login():
     answer = request.form['answer']
-    #with open("answers", "w+") as myfile:
-    #    myfile.write(text)
     return redirect("/rozcestnik")
     

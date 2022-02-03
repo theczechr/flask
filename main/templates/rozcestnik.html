@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <h1 class="title">
     Ukoly:
-  </h1>
   <div>
     <a href="{{ url_for('main.prvni_ukol_stranka') }}"class="subtitle">Prvni ukol</a>
 
@@ -13,9 +11,14 @@
   <a href="{{ url_for('main.druhy_ukol_stranka') }}"class="subtitle">Druhy ukol</a>
 </div>
 <div>
-  <a href="{{ url_for('main.register') }}"class="subtitle">Adamuv ukol</a>
+  <a href="{{ url_for('main.register') }}"class="subtitle">Adamuv ukol
+{%if stav.odeslano %}
+✅
+{% endif %}
+{% if not stav.odeslano %}
+❌
+{% endif %}
+  </a>
 </div>
-
-
 
 {% endblock %}
