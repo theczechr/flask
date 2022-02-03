@@ -18,7 +18,7 @@ class MyForm(FlaskForm):
     otazka12 = RadioField('Co je to operační systém?', choices=[(0, 'Základní program počítače umožňující běh dalších programů'), (1, 'Např. BIOS'), (2, 'Veškerý software předinstalovaný na počítači'), (3, 'Základní program počítače sloužící výhradně pro komunikaci s hardwarem')], coerce=int)
     otazka13 = RadioField('Co znamená zkratka HTML?', choices=[(0, 'HyperText Machine Learning'), (1, 'HyperText Modular Language'), (2, 'HyperText Markup Language'), (3, 'HyperText Machine Language')], coerce=int)
     otazka14 = RadioField('Co je to kryptoměna?', choices=[(0, 'Unikátní token digitálního vlastnictví NFT'), (1, 'Druh šifrování'), (2, 'Měna s detailní historií tranksakcí'), (3, 'Typ digitální měny, která je tvořena elektronicky')], coerce=int)
-    otazka15 = RadioField('V jakým programovací jazyku je napsaný Minecraft?', choices=[(0, 'PHP'), (1, 'Rust'), (2, 'Java'), (3, 'JavaScript')], coerce=int)
+    otazka15 = RadioField('V jakém programovací jazyku je napsaný Minecraft?', choices=[(0, 'PHP'), (1, 'Rust'), (2, 'Java'), (3, 'JavaScript')], coerce=int)
     otazka16 = RadioField('K čemu slouží kybernetika?', choices=[(0, 'Regulace, Technické řízení'), (1, 'Zabezpečení systému'), (2, 'Označení pro zločin na webu'), (3, 'Zpracování převodů mezi běžnou měnou a kryptoměnou')], coerce=int)
     otazka17 = RadioField('Kolik bajtů (byte) je jeden gigabajt (gigabyte)? Pozor na rozdíl mezi gibibyte a gigabyte!', choices=[(0, '1 000 000 000 000 B'), (1, '1 024 024 024 024 B'), (2, '1 073 741 824 B'), (3, '1 000 000 000 B')], coerce=int)
     otazka18 = RadioField('Jaké jsou dnes používané operační systémy na počítači?', choices=[(0, 'PowerShell'), (1, 'Unix, BSD'), (2, 'Windows, MacOS, Linux'), (3, 'MFT')], coerce=int)
