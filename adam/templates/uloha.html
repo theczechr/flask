@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>Formular</title>
+<body>
+{% from "_formhelpers.html" import render_field %}
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('main.rozcestnik') }}" class="navbar-item">
+    Rozcestnik
+</a>
+{% endif %}
+<form method=post>
+  {{ form.csrf_token }}
+  <dl>
+    {{render_field(form.otazka0, required=False)}}
+    {{render_field(form.otazka1, required=False)}}
+    {{render_field(form.otazka2, required=False)}}
+    {{render_field(form.otazka3, required=False)}}
+    {{render_field(form.otazka4, required=False)}}
+    {{render_field(form.otazka5, required=False)}}
+    {{render_field(form.otazka6, required=False)}}
+    {{render_field(form.otazka7, required=False)}}
+    {{render_field(form.otazka8, required=False)}}
+    {{render_field(form.otazka9, required=False)}}
+    {{render_field(form.otazka10, required=False)}}
+    {{render_field(form.otazka11, required=False)}}
+    {{render_field(form.otazka12, required=False)}}
+    {{render_field(form.otazka13, required=False)}}
+    {{render_field(form.otazka14, required=False)}}
+    {{render_field(form.otazka15, required=False)}}
+    {{render_field(form.otazka16, required=False)}}
+    {{render_field(form.otazka17, required=False)}}
+    {{render_field(form.otazka18, required=False)}}
+    {{render_field(form.otazka19, required=False)}}
+    {{render_field(form.otazka20, required=False)}}
+    {{render_field(form.otazka21, required=False)}}
+    {{render_field(form.otazka22, required=False)}}
+    {{render_field(form.otazka23, required=False)}}
+    {{render_field(form.otazka24, required=False)}}
+    <input type="submit"Odeslat>
+  </dl>
+</form>
+</body>

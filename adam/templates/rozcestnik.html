@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>zde mozna nejaky popis</h2>
+<p></p>
+<div>
+  <a href="{{ url_for('main.uloha') }}"class="subtitle">Adamuv ukol
+{%if stav.odeslano %}
+✅
+{% endif %}
+{% if not stav.odeslano %}
+❌
+{% endif %}
+  </a>
+</div>
+
+{% endblock %}
