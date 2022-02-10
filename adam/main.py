@@ -18,6 +18,7 @@ def rozcestnik():
     return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
 
 @app.route('/uloha', methods=['GET','POST'])
+@login_required
 def uloha():
     all_list = []
     spravne = 0
