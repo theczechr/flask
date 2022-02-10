@@ -24,7 +24,7 @@ def uloha():
     spravne = 0
     spravne_odpovedi = [0,0,0,1,3,0,2,1,1,3,1,1,0,2,3,2,0,3,2,0,2,0,3,0,0]
     form = MyForm()
-    if request.method == "POST": 
+    if request.method == "POST":
         if form.validate_on_submit():
             all_answers = form.data
             all_answers.pop('csrf_token') 
