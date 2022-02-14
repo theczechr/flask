@@ -8,6 +8,7 @@ class User(UserMixin, db.Model):
 
 class Body(bodovani.Model):
     id = bodovani.Column(bodovani.Integer, primary_key=True)
-    name = bodovani.Column(bodovani.String(1000), unique = False)
-    pocet_bodu = bodovani.Column(bodovani.Integer)
-    odeslano = bodovani.Column(bodovani.Boolean)
+    username = bodovani.Column(bodovani.String(1000), unique = False)
+    odpoved_1 = bodovani.Column(bodovani.String(1000), unique = False)
+    odpoved_2 = bodovani.Column(bodovani.String(1000), unique = False)
+    odpoved_3 = bodovani.Column(bodovani.String(1000), unique = False)
