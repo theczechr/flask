@@ -13,7 +13,14 @@ def index():
 @app.route('/rozcestnik')
 @login_required
 def rozcestnik():
-    return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+    return render_template('rozcestnik.html',name=current_user.name, stav=Body.query.filter_by(username=current_user.name).first())
+
+
+
+
+
+
+
 
 @app.route('/prvni_ukol', methods=['GET','POST'])
 @login_required
@@ -38,7 +45,7 @@ def druhy_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
         existuje = Body.query.filter_by(username=current_user.name).first()
-        if existuje:
+        if existuje:    
             existuje.odpoved_2 = odpoved
             bodovani.session.commit()
         else:
@@ -49,9 +56,19 @@ def druhy_ukol():
     else:
         return render_template("druhy_ukol.html")
 
-
-
-@app.route('/druhy_ukol', methods=['POST'])
-def login():
-    answer = request.form['answer']
-    return redirect("/rozcestnik")
+@app.route('/treti_ukol', methods=['GET','POST'])
+@login_required
+def treti_ukol():
+    if request.method == "POST": 
+        odpoved = request.form["answer"]
+        existuje = Body.query.filter_by(username=current_user.name).first()
+        if existuje:
+            existuje.odpoved_3 = odpoved
+            bodovani.session.commit()
+        else:
+            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1="", odpoved_2="", odpoved_3=odpoved)
+            bodovani.session.add(data)
+            bodovani.session.commit()
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+    else:
+        return render_template("druhy_ukol.html")
