@@ -18,7 +18,7 @@ def rozcestnik():
 
 
 
-@app.route("/hashovani")
+@app.route("/hashovani", methods=['GET', 'POST'])
 @login_required
 def hashing():
     return render_template("hash.html")
