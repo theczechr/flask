@@ -3,15 +3,10 @@
 {% block content %}
 
 <h1>Hashování</h1>
-<p>Zjistěte hash následujícího obrázku pomocí MD5 algoritmu. </p>
-<img src="../static/img/plane.jpg" alt="letadlo" width="300" height="100">
-<p>Hashování je matematická funkce, která převádí vstupní data do číselné kombinace. Výsledek hashování se nazývá otisk nebo také hash. </p>
-<p>Zahashovat lze libovolné množství dat a nezávisle na velikosti získáš stejně dlouhý výstup.</p>
-<p>Pokud tedy zahashuješ poprvé jen jedno slovo a podruhé celou větu, oba otisky budou stejně dlouhé. </p>
-<p>Důležité je to, že z výsledného hashe nelze zpětně rozluštit původní text, ale lze skrz něj ověřovat pravost.</p>
-<img src="../static/img/ship.jpg" alt="loď" width="300" height="200">
+<p>Zjistěte hash následujícího obrázku pomocí MD5 algoritmu a do kolonky pro odpověď odevzdejte text, co vám algoritmus vrátí.</p>
+<img src="../static/img/plane.jpg" alt="letadlo" width="300" height="300">
 <form method="POST">
-  <label for="answer">Odpoved:</label>
+  <label for="answer">Odpověď:</label>
   <input type="text" required="" id="answer" name="answer">
   <input type="submit">
 

@@ -18,8 +18,10 @@ def rozcestnik():
 
 
 
-
-
+@app.route("/hashovani")
+@login_required
+def hashing():
+    return render_template("hash.html")
 
 
 @app.route('/prvni_ukol', methods=['GET','POST'])
@@ -28,6 +30,7 @@ def prvni_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
         existuje = Body.query.filter_by(username=current_user.name).first()
+        print(odpoved)
         if existuje:
             existuje.odpoved_1 = odpoved
             bodovani.session.commit()
@@ -44,6 +47,7 @@ def prvni_ukol():
 def druhy_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
+        print(odpoved)
         existuje = Body.query.filter_by(username=current_user.name).first()
         if existuje:    
             existuje.odpoved_2 = odpoved
