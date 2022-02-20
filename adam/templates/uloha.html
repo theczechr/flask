@@ -2,6 +2,7 @@
 {% block content %}
 <form method=post>
   {{ form.csrf_token }}
+<<<<<<< HEAD
     <div>
     <p class="title ukol-description">Jaké jméno má bla bla bla</p>
     {% for subfield in form.otazka0 %}
@@ -160,5 +161,35 @@
 {% endfor %}
     <div id="button">
       <input type="submit"Odeslat>
+=======
+  <dl>
+    {{render_field(form.otazka0)}}
+    {{render_field(form.otazka1)}}
+    {{render_field(form.otazka2)}}
+    {{render_field(form.otazka3)}}
+    {{render_field(form.otazka4)}}
+    {{render_field(form.otazka5)}}
+    {{render_field(form.otazka6)}}
+    {{render_field(form.otazka7)}}
+    {{render_field(form.otazka8)}}
+    {{render_field(form.otazka9)}}
+    {{render_field(form.otazka10)}}
+    {{render_field(form.otazka11)}}
+    {{render_field(form.otazka12)}}
+    {{render_field(form.otazka13)}}
+    {{render_field(form.otazka14)}}
+    {{render_field(form.otazka15)}}
+    {{render_field(form.otazka16)}}
+    {{render_field(form.otazka17)}}
+    {{render_field(form.otazka18)}}
+    {{render_field(form.otazka19)}}
+    {{render_field(form.otazka20)}}
+    {{render_field(form.otazka21)}}
+    {{render_field(form.otazka22)}}
+    {{render_field(form.otazka23)}}
+    {{render_field(form.otazka24)}}
+    <input type="submit"value="Odeslat">
+  </dl>
+>>>>>>> 0a70d4bafae472bb027c2f86f44f435eda2c986e
 </form>
 {% endblock %}
