@@ -3,7 +3,7 @@ from flask_login import current_user, login_required
 from logging import *
 from . import db, bodovani
 from .models import Body
-from adam.odpovedi import *
+from .odpovedi import *
 all_users = {}
 app = Blueprint('main', __name__) # inicializace appky
 @app.route('/') # landing page, klidne si dejte landing page login nebo rozcestnik, zalezi uz na vas.
@@ -11,11 +11,15 @@ def index():
     if current_user.is_authenticated:
         return redirect(url_for('main.rozcestnik')) #pokud neni user prihlasen bude zde
     else:
-        return render_template('index.html') #pokud je prihlasen bude redirectnut na rozcestnik, neni pro nej duvod na tuto stranku chodit.
+        return redirect(url_for('main.index_page')) #pokud je prihlasen bude redirectnut na rozcestnik, neni pro nej duvod na tuto stranku chodit.
 @app.route('/rozcestnik')
 @login_required
 def rozcestnik():
     return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
+    
+@app.route('/index')
+def index_page():
+    return render_template("index.html")
 
 @app.route('/uloha', methods=['GET','POST'])
 @login_required
@@ -24,7 +28,7 @@ def uloha():
     spravne = 0
     spravne_odpovedi = [0,0,0,1,3,0,2,1,1,3,1,1,0,2,3,2,0,3,2,0,2,0,3,0,0]
     form = MyForm()
-    if request.method == "POST":
+    if request.method == "POST": 
         if form.validate_on_submit():
             all_answers = form.data
             all_answers.pop('csrf_token') 

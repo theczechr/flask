@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-
-{% block content %}
+{%block content%}
 <div class="column is-4 is-offset-4">
     <h3 class="title">Login</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <div class="notification is-danger">
+            <div class="notification is-danger" id="a">
             {{"Prosim prihlaste se."}}
             </div>
         {% endif %}
@@ -33,4 +32,4 @@
         </form>
     </div>
 </div>
-{% endblock %}
+{%endblock%}

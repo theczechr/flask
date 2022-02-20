@@ -1,0 +1,122 @@
+.loginbox {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hero .navbar {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.hero-body {
+    background-image: url("../static/SSPBrno.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-body > .container {
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 3.5rem;
+}
+
+.navbar-item {
+    font-size: 1.25rem;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.head-title {
+    font-size: 5rem;
+}
+
+.ukol-title {
+    font-size: 3.75rem;
+}
+
+.ukol-description {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.ukol-link {
+    font-size: 2rem;
+    align-content: center;
+}
+
+.ukol-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ukol-form > label {
+    font-size: 2rem;
+    align-content: stretch;
+    margin-top: 2rem;
+}
+
+.ukol-form > input[type="text"] {
+    color: white;
+    min-height: 2.5rem;
+    font-size: 2rem;
+    align-content: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    transition: 0.05s;
+    border: 5px solid transparent;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.ukol-form > input[type="text"]:focus {
+    border: 5px solid white;
+}
+
+.ukol-form > input[type="submit"] {
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: inherit;
+}
+
+.rozcestnik-link, .ukol-link {
+    width: fit-content;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
+
+}
+
+.rozcestnik-link:hover, .ukol-link:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+.navbar-left{
+    background-image: url("../static/purkiada2022-ctverec.png");
+    background-repeat: no-repeat;
+    background-size: 69px;
+    flex-grow:0;
+    flex-shrink: 0;
+    display:block;
+    padding:2rem;
+    max-height: inherit;
+    max-width:5rem;
+}
+
+
+

@@ -1,41 +1,164 @@
-<!DOCTYPE html>
-<title>Formular</title>
-<body>
-{% from "_formhelpers.html" import render_field %}
-{% if current_user.is_authenticated %}
-<a href="{{ url_for('main.rozcestnik') }}" class="navbar-item">
-    Rozcestnik
-</a>
-{% endif %}
+{% extends "base.html" %}
+{% block content %}
 <form method=post>
   {{ form.csrf_token }}
-  <dl>
-    {{render_field(form.otazka0)}}
-    {{render_field(form.otazka1)}}
-    {{render_field(form.otazka2)}}
-    {{render_field(form.otazka3)}}
-    {{render_field(form.otazka4)}}
-    {{render_field(form.otazka5)}}
-    {{render_field(form.otazka6)}}
-    {{render_field(form.otazka7)}}
-    {{render_field(form.otazka8)}}
-    {{render_field(form.otazka9)}}
-    {{render_field(form.otazka10)}}
-    {{render_field(form.otazka11)}}
-    {{render_field(form.otazka12)}}
-    {{render_field(form.otazka13)}}
-    {{render_field(form.otazka14)}}
-    {{render_field(form.otazka15)}}
-    {{render_field(form.otazka16)}}
-    {{render_field(form.otazka17)}}
-    {{render_field(form.otazka18)}}
-    {{render_field(form.otazka19)}}
-    {{render_field(form.otazka20)}}
-    {{render_field(form.otazka21)}}
-    {{render_field(form.otazka22)}}
-    {{render_field(form.otazka23)}}
-    {{render_field(form.otazka24)}}
-    <input type="submit"Odeslat>
-  </dl>
+    <div>
+    <p class="title ukol-description">Jaké jméno má bla bla bla</p>
+    {% for subfield in form.otazka0 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+    {% endfor %}
+</div>
+<div>
+  <h1>Jaké jméno má bla bla bla</h1>
+    {% for subfield in form.otazka1 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+</div>
+{% for subfield in form.otazka2 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka3 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka3 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka5 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka6 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka7 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka8 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka9 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka10 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka11 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka12 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka13 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka14 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka15 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka16 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka17 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka18 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka19 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka20 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka21 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka22 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka23 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+{% for subfield in form.otazka24 %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    <div id="button">
+      <input type="submit"Odeslat>
 </form>
-</body>
+{% endblock %}
