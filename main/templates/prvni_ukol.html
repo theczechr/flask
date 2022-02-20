@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h1>*Nazev prvni ulohy*</h1>
-<p>*Popis prvni ulohy</p>
-<p>obrazky k prvni uloze</p>
+<h1>Hashování</h1>
+<p>Zjistěte hash následujícího obrázku pomocí MD5 algoritmu a do kolonky pro odpověď odevzdejte text, co vám algoritmus vrátí.</p>
+<img src="../static/img/plane.jpg" alt="letadlo" width="300" height="300">
 <form method="POST">
-  <label for="answer">Odpoved:</label>
-  <input type="text" id="answer" name="answer"><br><br>
+  <label for="answer">Odpověď:</label>
+  <input type="text" required="" id="answer" name="answer">
   <input type="submit">
 
 </form>

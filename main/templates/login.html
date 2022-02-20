@@ -2,34 +2,34 @@
 
 {% block content %}
 <div class="column is-4 is-offset-4">
-    <h3 class="title">Login</h3>
+    <h3 class="title">Přihlášení</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             <div class="notification is-danger">
-            {{"Prosim prihlaste se."}}
+            {{"Pro přístup k této úloze se musíte přihlásit."}}
             </div>
         {% endif %}
         {% endwith %}
         <form method="POST" action="/login">
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="text" name="username" placeholder="Váš Email/username" autofocus=""> <!-- Toto jeste zalezi podle toho jestli se teda budou logovat podle username nebo emailu. -->
+                    <input class="input is-large" type="text" name="username" placeholder="Přihlašovací jméno" autofocus=""> <!-- Toto jeste zalezi podle toho jestli se teda budou logovat podle username nebo emailu. -->
                 </div>
             </div>
 
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="password" name="password" placeholder="Vaše heslo">
+                    <input class="input is-large" type="password" name="password" placeholder="Heslo">
                 </div>
             </div>
             <div class="field">
                 <label class="checkbox">
                     <input type="checkbox" name="remember">
-                    Zapamatuj si mě
+                    Zapamatovat přihlášení
                 </label>
             </div>
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            <button class="button is-block is-info is-large is-fullwidth">Přihlásit se</button>
         </form>
     </div>
 </div>

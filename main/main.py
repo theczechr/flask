@@ -5,8 +5,6 @@ from logging import *
 from sqlalchemy import all_
 from . import db, bodovani
 from .models import Body
-from main.odpovedi import *
-all_users = {}
 app = Blueprint('main', __name__) # inicializace appky
 @app.route('/') # landing page, klidne si dejte landing page login nebo rozcestnik, zalezi uz na vas.
 def index():
@@ -17,8 +15,9 @@ def index():
 @app.route('/rozcestnik')
 @login_required
 def rozcestnik():
-    return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
+    return render_template('rozcestnik.html',name=current_user.name, stav=Body.query.filter_by(username=current_user.name).first())
 
+<<<<<<< HEAD
 @app.route('/register', methods=['GET','POST'])
 def register():
     all_list = []
@@ -58,17 +57,21 @@ def register():
 
     else:
         return render_template('signup.html', form=form)
+=======
+
+>>>>>>> c2294f8269af8d51f4a0535fda96499050c95acf
 
 
+@app.route("/hashovani", methods=['GET', 'POST'])
+@login_required
+def hashing():
+    return render_template("hash.html")
 
-@app.route("/prvni_ukol") #definovani url
-@login_required # pusti vas na stranku co je definovana RadioField(u'Full Name')(u'Full Name')RadioField(u'Full Name')RadioField(u'Full Name') radek vys pouze kdyz jste prihlaseni
-def prvni_ukol_stranka():
-    return render_template("prvni_ukol.html", name=current_user.name) #nastavuje ze jste prihlaseni pod xxxxx jmenem je 
 
-@app.route('/prvni_ukol', methods=['POST'])
+@app.route('/prvni_ukol', methods=['GET','POST'])
 @login_required
 def prvni_ukol():
+<<<<<<< HEAD
     odpoved = "ano"
     current_user.odpoved = request.form["answer"] # timto zpusobem dostaneme ze stranky odpoved
     if current_user.odpoved == odpoved:
@@ -76,12 +79,54 @@ def prvni_ukol():
         print(current_user)
     return render_template("rozcestnik.html", odpoved="gj") # vraci zpatky na rozcestnik, udelejte si jak chce
 @app.route("/druhy_ukol")
-@login_required
-def druhy_ukol_stranka():
-    return render_template('druhy_ukol.html')
+=======
+    if request.method == "POST": 
+        odpoved = request.form["answer"]
+        existuje = Body.query.filter_by(username=current_user.name).first()
+        print(odpoved)
+        if existuje:
+            existuje.odpoved_1 = odpoved
+            bodovani.session.commit()
+        else:
+            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1=odpoved, odpoved_2="", odpoved_3="")
+            bodovani.session.add(data)
+            bodovani.session.commit()
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+    else:
+        return render_template("prvni_ukol.html")
 
-@app.route('/druhy_ukol', methods=['POST'])
-def login():
-    answer = request.form['answer']
-    return redirect("/rozcestnik")
-    
+@app.route('/druhy_ukol', methods=['GET','POST'])
+>>>>>>> c2294f8269af8d51f4a0535fda96499050c95acf
+@login_required
+def druhy_ukol():
+    if request.method == "POST": 
+        odpoved = request.form["answer"]
+        print(odpoved)
+        existuje = Body.query.filter_by(username=current_user.name).first()
+        if existuje:    
+            existuje.odpoved_2 = odpoved
+            bodovani.session.commit()
+        else:
+            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1="", odpoved_2=odpoved, odpoved_3="")
+            bodovani.session.add(data)
+            bodovani.session.commit()
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+    else:
+        return render_template("druhy_ukol.html")
+
+@app.route('/treti_ukol', methods=['GET','POST'])
+@login_required
+def treti_ukol():
+    if request.method == "POST": 
+        odpoved = request.form["answer"]
+        existuje = Body.query.filter_by(username=current_user.name).first()
+        if existuje:
+            existuje.odpoved_3 = odpoved
+            bodovani.session.commit()
+        else:
+            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1="", odpoved_2="", odpoved_3=odpoved)
+            bodovani.session.add(data)
+            bodovani.session.commit()
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+    else:
+        return render_template("druhy_ukol.html")

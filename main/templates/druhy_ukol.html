@@ -2,12 +2,22 @@
 
 {% block content %}
 
-<h1>*Nazev druhe ulohy*</h1>
-<p>*Popis druhe ulohy</p>
-<p>obrazky k druhe uloze</p>
+<h1>Kolize</h1>
+<p>Bohužel, ne všechny hashovací algoritmy jsou perfektní a proto u některých může dojít ke kolizi.</p>
+<p>Možná se ptáte, co taková kolize znamená? A v čem je to špatné?</p>
+<p>Jako kolizi klasifikujeme shodu jakýchkoli dvou odlišných vstupů, například kdybychom ze vstupu "auto" a "zmrzlina" dostali od algoritmu stejný výstup.</p>
+<p>A špatné je to potom z důvodu bezpečnosti, hashovací algoritmy se dnes používají pro zašifrování všech hesel, kdyby více hesel mohlo odemknout jeden účet, nebylo by to dobré.</p>
+<p>Tyto dva obrázky mají v jednom z algoritmů stejný hash, najděte o jaký algoritmus se jedná.</p>
+<img src="../static/img/plane.jpg" alt="letadlo" width="300" height="300">
+<img src="../static/img/ship.jpg" alt="loď" width="300" height="300">
 <form method="POST">
-  <label for="answer">Odpoved:</label>
-  <input type="text" id="answer" name="answer"><br><br>
-  <input type="submit">
+  <label for="answer">Odpověď:</label>
+  <input type="radio" id="MD5" required="" name="answer" value="MD5">
+  <label for="MD5">MD5</label><br>
+  <input type="radio" id="SHA1" required="" name="answer" value="SHA1">
+  <label for="SHA1">SHA1</label><br>
+  <input type="radio" id="SHA-256" required="" name="answer" value="SHA-256">
+  <label for="SHA-256">SHA-256</label> <br>
+  <input type="submit" value="odeslat">
 </form>
 {% endblock %}
