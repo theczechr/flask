@@ -1,6 +1,8 @@
 from flask import *
 from flask_login import current_user, login_required
 from logging import *
+
+from sqlalchemy import all_
 from . import db, bodovani
 from .models import Body
 from main.odpovedi import *
@@ -27,12 +29,13 @@ def register():
         if form.validate_on_submit():
             all_answers = form.data
             all_answers.pop('csrf_token') 
+            print(all_answers)
             for value in all_answers.values():
                 all_list.append(value)
             all_users[current_user.id] = all_list
             
             for i in range(len(all_list)):
-                if spravne_odpovedi[i] == all_users[current_user.id][i]:
+                if spravne_odpovedi[i] == all_list[i]:
                     spravne +=1
             
             print(spravne)
@@ -41,6 +44,7 @@ def register():
             existuje = Body.query.filter_by(name=current_user.name).first()
             if existuje:
                 existuje.pocet_bodu = spravne
+                existuje.odeslano = True
                 bodovani.session.commit()
 
             else:
@@ -48,8 +52,8 @@ def register():
                 bodovani.session.add(data)
                 bodovani.session.commit()
         else:
-
             print(form.errors)
+        
         return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
 
     else:
@@ -65,7 +69,6 @@ def prvni_ukol_stranka():
 @app.route('/prvni_ukol', methods=['POST'])
 @login_required
 def prvni_ukol():
-    global spravne
     odpoved = "ano"
     current_user.odpoved = request.form["answer"] # timto zpusobem dostaneme ze stranky odpoved
     if current_user.odpoved == odpoved:
