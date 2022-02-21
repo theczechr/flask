@@ -24,6 +24,11 @@
                                 Rozcestník
                             </a>
                             {% endif %}
+                            {% if not current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item"> 
+                                Přihlášení
+                            </a>
+                            {% endif %}
                             {% if current_user.is_authenticated %}
                             <p style='color:white; 'class="navbar-item"> 
                                 Přihlášen jako {{current_user.name}}

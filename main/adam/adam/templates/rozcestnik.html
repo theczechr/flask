@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="title head-title">Úloha 7 - IT Kvíz</h1>
+<div class="content-box">
+  <a style='font-size: 40px;', href="{{ url_for('main.uloha') }}"><div class="rozcestnik-link" style="align-content: center;">Kvíz  
+    {%if stav.odeslano %}
+    (Odesláno ✅)
+    {% endif %}
+  </div></a>
+</div>
+{% endblock %}

@@ -1,34 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-    Ukoly:
-  <div>
-    <a href="{{ url_for('main.prvni_ukol') }}"class="subtitle">První úkol</a>
+<h1 class="title head-title">Úloha 7 - IT Kvíz</h1>
+<div class="content-box" style="border:wheat">
+  <a style='font-size: 40px;', href="http://onlinemd5.com/"><div class="rozcestnik-link" style="align-content: center;">Hash generátor</a>
+</div>
+
+<div class="content-box">
+  <a style='font-size: 40px;', href="{{ url_for('main.prvni_ukol') }}"><div class="rozcestnik-link" style="align-content: center;">Úkol 1
     {%if stav.odpoved_1 %}
-    ✅
-    {% endif %}
-    {% if not stav.odpoved_1 %}
-    ❌
+    (Odesláno ✅)
     {% endif %}
   </div>
-  <div>
-    <a href="{{ url_for('main.druhy_ukol') }}"class="subtitle">Druhý úkol</a>
+  </a>
+  <a style='font-size: 40px;', href="{{ url_for('main.druhy_ukol') }}"><div class="rozcestnik-link" style="align-content: center;">Úkol 2  
     {%if stav.odpoved_2 %}
-    ✅
-    {% endif %}
-    {% if not stav.odpoved_2 %}
-    ❌
+    (Odesláno ✅)
     {% endif %}
   </div>
-  <div>
-    <a href="{{ url_for('main.treti_ukol') }}"class="subtitle">Třetí úkol</a>
+  </a>
+
+  <a style='font-size: 40px;', href="{{ url_for('main.druhy_ukol') }}"><div class="rozcestnik-link" style="align-content: center;">Úkol 3
     {%if stav.odpoved_3 %}
-    ✅
-    {% endif %}
-    {% if not stav.odpoved_3 %}
-    ❌
+    (Odesláno ✅)
     {% endif %}
   </div>
+  </a>
+</div>  
 
 {% endblock %}

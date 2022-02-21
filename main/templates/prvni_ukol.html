@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Hashování</h1>
-<p>Zjistěte hash následujícího obrázku pomocí MD5 algoritmu a do kolonky pro odpověď odevzdejte text, co vám algoritmus vrátí.</p>
-<img src="../static/img/plane.jpg" alt="letadlo" width="300" height="300">
+<h1 class="title head-title">Hashování</h1>
+<p class="adam-description">Zjistěte hash následujícího obrázku pomocí MD5 algoritmu a do kolonky pro odpověď odevzdejte text, co vám algoritmus vrátí.</p>
+<img src="../static/plane.jpg" alt="letadlo" width="300" height="300">
 <form method="POST">
   <label for="answer">Odpověď:</label>
   <input type="text" required="" id="answer" name="answer">
