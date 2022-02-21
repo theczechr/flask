@@ -8,7 +8,7 @@ class User(UserMixin, db.Model):
 
 class Body(bodovani.Model):
     id = bodovani.Column(bodovani.Integer, primary_key=True)
-    username = bodovani.Column(bodovani.String(1000), unique = False)
+    name = bodovani.Column(bodovani.String(1000), unique = False)
     odpoved_1 = bodovani.Column(bodovani.String(1000), unique = False)
     odpoved_2 = bodovani.Column(bodovani.String(1000), unique = False)
     odpoved_3 = bodovani.Column(bodovani.String(1000), unique = False)

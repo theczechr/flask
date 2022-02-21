@@ -172,5 +172,70 @@
 .content > h2, footer {
     color: #d9d9d9;
 }
+.sent {
+    background: linear-gradient(238deg, #fd8800, #fd008f, #9700fd, #003dfd, #05c7e6, #4bd58d);
+    background-size: 1200% 1200%;
+    -webkit-animation: rainbow 10s ease infinite;
+    animation: rainbow 10s ease infinite;
+}
+  @-webkit-keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+  @keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+ }
 
+ .ukol-title {
+    font-size: 3.75rem;
+}
+
+.ukol-description {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.ukol-link {
+    font-size: 2rem;
+    align-content: center;
+}
+
+.ukol-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ukol-form > label {
+    font-size: 2rem;
+    align-content: stretch;
+    margin-top: 2rem;
+}
+
+.ukol-form > input[type="text"] {
+    color: white;
+    min-height: 2.5rem;
+    font-size: 2rem;
+    align-content: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    transition: 0.05s;
+    border: 5px solid transparent;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.ukol-form > input[type="text"]:focus {
+    border: 5px solid white;
+}
+
+.ukol-form > input[type="submit"] {
+    color: white;
+    cursor: pointer;
+    border: none;
+}
 

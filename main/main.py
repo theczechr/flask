@@ -15,25 +15,25 @@ def index():
 @app.route('/rozcestnik')
 @login_required
 def rozcestnik():
-    return render_template('rozcestnik.html',name=current_user.name, stav=Body.query.filter_by(username=current_user.name).first())
+    return render_template('rozcestnik.html',name=current_user.name, stav=Body.query.filter_by(name=current_user.name).first())
 
-
+#Body.query.filter_by(name=current_user.name).first()
 
 @app.route('/prvni_ukol', methods=['GET','POST'])
 @login_required
 def prvni_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
-        existuje = Body.query.filter_by(username=current_user.name).first()
+        existuje = Body.query.filter_by(name=current_user.name).first()
         print(odpoved)
         if existuje:
             existuje.odpoved_1 = odpoved
             bodovani.session.commit()
         else:
-            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1=odpoved, odpoved_2="", odpoved_3="")
+            data = Body(id= current_user.id, name=str(current_user.name), odpoved_1=odpoved, odpoved_2="", odpoved_3="")
             bodovani.session.add(data)
             bodovani.session.commit()
-        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
     else:
         return render_template("prvni_ukol.html")
 
@@ -43,15 +43,15 @@ def druhy_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
         print(odpoved)
-        existuje = Body.query.filter_by(username=current_user.name).first()
-        if existuje:    
+        existuje = Body.query.filter_by(name=current_user.name).first()
+        if existuje:
             existuje.odpoved_2 = odpoved
             bodovani.session.commit()
         else:
-            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1="", odpoved_2=odpoved, odpoved_3="")
+            data = Body(id= current_user.id, name=str(current_user.name), odpoved_1="", odpoved_2=odpoved, odpoved_3="")
             bodovani.session.add(data)
             bodovani.session.commit()
-        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
     else:
         return render_template("druhy_ukol.html")
 
@@ -60,14 +60,14 @@ def druhy_ukol():
 def treti_ukol():
     if request.method == "POST": 
         odpoved = request.form["answer"]
-        existuje = Body.query.filter_by(username=current_user.name).first()
+        existuje = Body.query.filter_by(name=current_user.name).first()
         if existuje:
             existuje.odpoved_3 = odpoved
             bodovani.session.commit()
         else:
-            data = Body(id= current_user.id, username=str(current_user.name), odpoved_1="", odpoved_2="", odpoved_3=odpoved)
+            data = Body(id= current_user.id, name=str(current_user.name), odpoved_1="", odpoved_2="", odpoved_3=odpoved)
             bodovani.session.add(data)
             bodovani.session.commit()
-        return render_template('rozcestnik.html', stav=Body.query.filter_by(username=current_user.name).first())
+        return render_template('rozcestnik.html', stav=Body.query.filter_by(name=current_user.name).first())
     else:
         return render_template("druhy_ukol.html")

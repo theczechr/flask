@@ -49,7 +49,7 @@ def uloha():
                 bodovani.session.commit()
 
             else:
-                data = Body(name=str(current_user.name), pocet_bodu=spravne, odeslano=True)
+                data = Body(id = current_user.id ,name=str(current_user.name), pocet_bodu=spravne, odeslano=True)
                 bodovani.session.add(data)
                 bodovani.session.commit()
         else:
