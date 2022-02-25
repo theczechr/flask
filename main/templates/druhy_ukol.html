@@ -2,9 +2,9 @@
 {% block content %}
 <h1 class="ukol-title"> Úkol 2 - Kolize</h1>
 <p class="ukol-description">Bohužel, ne všechny hashovací algoritmy jsou perfektní a proto u některých může dojít ke kolizi.</p>
-<p class="ukol-description">Možná se ptáte, co taková kolize znamená? A v čem je to špatné?</p>
+<p class="ukol-description">Možná se ptáte, co taková kolize znamená? A proč je to špatné?</p>
 <p class="ukol-description">Jako kolizi klasifikujeme shodu jakýchkoli dvou odlišných vstupů, například kdybychom ze vstupu "auto" a "zmrzlina" dostali od algoritmu stejný výstup.</p>
-<p class="ukol-description">A špatné je to potom z důvodu bezpečnosti, hashovací algoritmy se dnes používají pro zašifrování všech hesel, kdyby více hesel mohlo odemknout jeden účet, nebylo by to dobré.</p>
+<p class="ukol-description">Špatn= je to z důvodu bezpečnosti, hashovací algoritmy se dnes používají pro zašifrování všech hesel a nechceme, aby více hesel mohlo odemknout jeden účet.</p>
 <p class="ukol-description">Tyto dva obrázky mají v jednom z algoritmů stejný hash, najděte o jaký algoritmus se jedná.</p>
 <img src="../static/plane.jpg" alt="letadlo" width="500" height="200">
 <img src="../static/ship.jpg" alt="loď" width="500" height="200">
@@ -22,6 +22,6 @@
   <label class="adam-description"  for="SHA-256">SHA-256</label> <br>
   <br>
   <br>
-  <input class="ukol-link" type="submit" value="Odeslat">
+  <input class="ukol-link ukol form" type="submit" value="Odeslat">
 </form>
 {% endblock %}
