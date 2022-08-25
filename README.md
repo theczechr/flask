@@ -6,7 +6,7 @@
 
 ## Spuštění
 1. `cd` do nadřazené složky
-2. - VS Code PowerShell: `$env:FLASK_APP="main"`
+2. - Windows PowerShell: `$env:FLASK_APP="main"`
    - Linux: `export FLASK_APP=main`
 3. `flask run --host 0.0.0.0 --port xxxx` (po zavření terminálu je opět potřeba nastavit `FLASK_APP`)
 
