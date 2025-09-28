@@ -1,4 +1,4 @@
-# Flask Application
+# Purkiada 2023 flask server
 ## Overview
 
 This repository contains three tasks prepared for the [Purkiáda](https://purkiada.sspbrno.cz/) school competition:
